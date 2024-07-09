@@ -43,7 +43,7 @@ fine_tune() {
 }
 
 # Variables for cleaner handling
-BASE_DIR="/mnt/local_storage"
+BASE_DIR="/mnt/local_storage"  # todo: change this
 DATA_DIR="./data"
 TRAIN_PATH="${DATA_DIR}/train.jsonl"
 TEST_PATH="${DATA_DIR}/test.jsonl"
@@ -68,6 +68,7 @@ do
 done
 
 # Batch size and node count
+# TODO: modify batch size and 
 case $SIZE in
 "7b")
     BS=16
@@ -88,7 +89,7 @@ case $SIZE in
 esac
 
 # Model related variables 
-MODEL_ID="meta-llama/Llama-2-${SIZE}-hf"
+MODEL_ID="meta-llama/Llama-2-${SIZE}-hf"  # todo: change this
 CONFIG_DIR="./deepspeed_configs/zero_3_llama_2_${SIZE}.json"
 
 check_and_create_dataset "${DATA_DIR}"
